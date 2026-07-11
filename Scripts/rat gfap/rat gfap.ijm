@@ -1,0 +1,13 @@
+open("C:/Users/ninaz/Downloads/IGL images/Lindsay/Rat 1 - Slide 8 - GFAP594 - DAPI350 - stack.tif");
+selectImage("Rat 1 - Slide 8 - GFAP594 - DAPI350 - stack.tif");
+run("Stack to Images");
+selectImage("Rat-0001");
+selectImage("Rat-0002");
+run("Red");
+setOption("ScaleConversions", true);
+run("8-bit");
+setAutoThreshold("Default dark no-reset");
+//run("Threshold...");
+setThreshold(29, 255, "raw");
+run("Set Measurements...", "area_fraction redirect=None decimal=3");
+run("Measure");
